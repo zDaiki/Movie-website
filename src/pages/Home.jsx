@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { getFeaturedMovies, getTrendingMovies, getPopularMovies } from '../services/api';
@@ -35,19 +34,19 @@ const Home = () => {
   const [popularMovies, setPopularMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
-  
+
   useEffect(() => {
     const fetchData = async () => {
       try {
         setIsLoading(true);
-        
+
         // Fetch all data concurrently
         const [featured, trending, popular] = await Promise.all([
           getFeaturedMovies(),
           getTrendingMovies(),
           getPopularMovies()
         ]);
-        
+
         setFeaturedMovies(featured);
         setTrendingMovies(trending.results);
         setPopularMovies(popular.results);
@@ -59,29 +58,39 @@ const Home = () => {
         setIsLoading(false);
       }
     };
-    
+
     fetchData();
   }, []);
-  
+
   if (isLoading) {
     return <LoadingSpinner />;
   }
-  
+
+  if (error) {
+    return (
+      <ErrorMessage>
+        {error}
+        <p style={{marginTop: '10px'}}>
+          The movie data couldn't be loaded. This could be due to API connection issues. 
+          Using sample data instead.
+        </p>
+      </ErrorMessage>
+    );
+  }
+
   return (
     <div>
-      {error && <ErrorMessage>{error}</ErrorMessage>}
-      
       {featuredMovies.length > 0 && (
         <Carousel movies={featuredMovies} />
       )}
-      
+
       <Section>
         <SectionHeader>
           <SectionTitle>Trending This Week</SectionTitle>
         </SectionHeader>
         <MovieGrid movies={trendingMovies.slice(0, 6)} />
       </Section>
-      
+
       <Section>
         <SectionHeader>
           <SectionTitle>Popular Movies</SectionTitle>
