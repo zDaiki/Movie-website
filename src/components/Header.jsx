@@ -10,7 +10,7 @@ const HeaderContainer = styled.header`
 `;
 
 const NavContainer = styled.div`
-  max-width: 1200px;
+  max-width: 100%;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -26,12 +26,14 @@ const Logo = styled(Link)`
   text-decoration: none;
   display: flex;
   align-items: center;
+  margin-left: 60px;
   gap: 10px;
 `;
 
 const Nav = styled.nav`
   display: flex;
-  gap: 20px;
+  margin-right: 500px;
+  gap: 50px;
   
   @media (max-width: 768px) {
     margin-top: 10px;
@@ -53,6 +55,7 @@ const NavLink = styled(Link)`
 const SearchContainer = styled.div`
   display: flex;
   align-items: center;
+  margin-right: 60px;
   
   @media (max-width: 768px) {
     width: 100%;
@@ -65,7 +68,7 @@ const SearchInput = styled.input`
   border-radius: 20px 0 0 20px;
   border: none;
   outline: none;
-  width: 200px;
+  width: 250px;
   
   @media (max-width: 768px) {
     flex: 1;
@@ -97,7 +100,7 @@ const Header = () => {
     <HeaderContainer>
       <NavContainer>
         <Logo to="/">
-          <span>MovieMania</span>
+          <span>DaikiMovies</span>
         </Logo>
         
         <Nav>

@@ -1,4 +1,3 @@
-
 import MovieCard from './MovieCard';
 import styled from 'styled-components';
 

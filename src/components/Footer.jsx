@@ -10,7 +10,7 @@ const FooterContainer = styled.footer`
 `;
 
 const FooterContent = styled.div`
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -55,8 +55,8 @@ const Footer = () => {
     <FooterContainer>
       <FooterContent>
         <FooterSection>
-          <FooterTitle>MovieMania</FooterTitle>
-          <p>Your ultimate destination for movie information, reviews, and recommendations.</p>
+          <FooterTitle>DaikiMovies</FooterTitle>
+          <p>Yoh Website ma dami dami movie herna paicha rey hai</p>
         </FooterSection>
         
         <FooterSection>
@@ -85,7 +85,7 @@ const Footer = () => {
       </FooterContent>
       
       <Copyright>
-        © {new Date().getFullYear()} MovieMania. All rights reserved.
+        © {new Date().getFullYear()} DaikiMovies. All rights reserved.
       </Copyright>
     </FooterContainer>
   );

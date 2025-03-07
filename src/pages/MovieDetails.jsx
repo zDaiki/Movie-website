@@ -138,9 +138,10 @@ const StarIcon = styled.span`
 
 const Overview = styled.div`
   margin-bottom: 20px;
+  color: black;
   
   @media (max-width: 768px) {
-    color: var(--text-color);
+    color: color: black;
   }
 `;
 
@@ -391,4 +392,4 @@ const MovieDetails = () => {
   );
 };
 
-export default MovieDetailss;
+export default MovieDetails
